@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StegoVault - Secure Image Steganography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>StegoVault</h1>
+            <p>Hide your secrets in plain sight.</p>
+        </header>
+
+        <main class="split-view">
+            <!-- Encryption Section -->
+            <section class="panel encryption-panel" id="encrypt-section">
+                <h2><span class="icon">🔒</span> Encrypt</h2>
+                <div class="input-group">
+                    <label for="enc-image-input" class="file-upload-label">
+                        <span id="enc-file-name">Choose Image to Hide Message</span>
+                    </label>
+                    <input type="file" id="enc-image-input" accept="image/*" hidden>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="secret-message" placeholder="Enter your secret message here..."></textarea>
+                </div>
+
+                <button id="encrypt-btn" class="action-btn">Encrypt & Download</button>
+
+                <div class="preview-area" id="enc-preview">
+                    <!-- Preview of original image will appear here -->
+                </div>
+            </section>
+
+            <!-- Decryption Section -->
+            <section class="panel decryption-panel" id="decrypt-section">
+                <h2><span class="icon">🔓</span> Decrypt</h2>
+                <div class="input-group">
+                    <label for="dec-image-input" class="file-upload-label">
+                        <span id="dec-file-name">Upload Image to Reveal Message</span>
+                    </label>
+                    <input type="file" id="dec-image-input" accept="image/*" hidden>
+                </div>
+
+                <button id="decrypt-btn" class="action-btn">Decrypt Message</button>
+
+                <div class="output-group">
+                    <label>Decrypted Message:</label>
+                    <textarea id="decrypted-output" readonly
+                        placeholder="Hidden message will appear here..."></textarea>
+                </div>
+
+                <div class="preview-area" id="dec-preview">
+                    <!-- Preview of uploaded image will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

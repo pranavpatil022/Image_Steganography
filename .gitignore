@@ -1,0 +1,6 @@
+target/
+*.zip
+.idea/
+*.class
+*.jar
+**/oracleJdk-25/
